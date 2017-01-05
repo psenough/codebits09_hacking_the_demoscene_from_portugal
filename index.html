@@ -1,0 +1,643 @@
+<html>
+
+<header>
+<title>Hacking The Demoscene</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" type="image/gif" href="progressbar.gif" />
+<link rel="stylesheet" href="demoscene.css" type="text/css" media="screen" />
+<script type="text/javascript" src="swfobject/swfobject.js"></script>
+<script src="rgraph/RGraph.common.js" ></script>
+<script src="rgraph/RGraph.bar.js" ></script>
+<script type="text/javascript">
+
+	var videolist = ['actionforce.swf', 'atc.swf', 'excess.swf', 'scs.swf'];
+
+	
+	function addFlashToContent(id) {
+		var flashvars = { };
+		var params = { loop: "false" };
+		var attributes = {};
+		var filename = videolist[id];
+		var width = 320;
+		var height = 240;
+		document.getElementById('swfcontent').innerHTML = '<div id="' + id + '"></div>';
+		swfobject.embedSWF(filename, id, width, height, "10.0.0", "expressInstall.swf", flashvars, params, attributes);
+	}
+
+
+var quote = new Array();
+var lefti = new Array();
+var righti = new Array();
+var index = faq = demoparties = hack = inercia = minimalartifact = farbrausch = enoughrecords = kosmoplovci = cpu = 0;
+var jsID;
+
+
+function loadup(){
+var i=0;
+quote[i]="Hello World !!";
+
+quote[++i]='Hacking The <a href="http://en.wikipedia.org/wiki/Demoscene">Demoscene</a> From Portugal';
+quote[++i]='<a href="http://tpolm.org/~ps/">Filipe Cruz</a>';
+quote[++i]=quote[i-1]+"<br /><br />MSc Informatics Engineer<br /><br />Software Developer<br />biomedical communication company";
+lefti[i] = "feup";
+righti[i] = "ttw";
+quote[++i]=quote[i-2]+"<br /><br /><strike>MSc Informatics Engineer<br /><br />Software Developer<br />biomedical communication company</strike>";
+
+quote[++i]="Demoscene!";
+lefti[i] = righti[i] = "379.gif";
+
+quote[++i]="What is the Demoscene?";
+lefti[i] = righti[i] = "379.gif";
+
+quote[++i]=quote[i-1]+"<br /><br />dark parallel universe";
+lefti[i] = righti[i] = "11250.jpg";
+quote[++i]=quote[i-2]+"<br /><br />dark parallel universe<br />of computer nerds";
+lefti[i] = righti[i] = "11250.jpg";
+quote[++i]=quote[i-3]+"<br /><br />dark parallel universe<br /><strike>of computer nerds</strike><br />of mad cientists";
+lefti[i] = righti[i] = "429.jpg";
+quote[++i]=quote[i-4]+"<br /><br />dark parallel universe<br /><strike>of computer nerds<br />of mad cientists</strike><br />of dark ninjas";
+lefti[i] = righti[i] = "311.gif";
+quote[++i]=quote[i-1]+"<br /><br />shrouded in dark mystery";
+lefti[i] = righti[i] = "301.gif";
+quote[++i]=quote[i-1]+"<br /><br />and dark wonder";
+quote[++i]=quote[i-1]+"<br /><br />and cubes";
+lefti[i] = righti[i] = "30244.jpg";
+
+quote[++i]="ok, maybe i'm exagerating abit";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />but for this presentation";
+quote[++i]=quote[i-1]+"<br /><br />my bio as Filipe Cruz<br />is irrelevant";
+
+quote[++i]="howhever";
+quote[++i]=quote[i-1]+"<br /><br />my bio as ps / TPOLM<br />(the demoscener)";
+quote[++i]=quote[i-2]+"<br /><br />my bio as ps / TPOLM<br />actually is relevant";
+quote[++i]=quote[i-1]+"<br />(well, marginally)";
+quote[++i]="but i still wont list it to you";
+quote[++i]="but i still <strike>wont</strike> cant list it to you";
+quote[++i]=quote[i-1]+"<br /><br />actually i can";
+quote[++i]=quote[i-1]+"<br /><br />but it'll just sound complicated";
+quote[++i]=quote[i-1]+"<br /><br />demogroups, demoparties, diskmags";
+quote[++i]=quote[i-1]+"<br />4k intros, musicdisks, netlabels";
+quote[++i]=quote[i-1]+"<br /><br />all ellusive definitions from the demoscene";
+
+quote[++i]="so let's start from the begining";
+//quote[++i]="What is a demoscene?!";
+//quote[++i]="<i>Oh Filipe,<br />What is a demoscene?!</i>";
+//quote[++i]="how can we hack it?!";
+
+quote[++i]="1) What is a demo?";
+lefti[i] = righti[i] = "63.png";
+quote[++i]=quote[i-1]+"<br /><br />2) Where demoscene came from?";
+lefti[i] = righti[i] = "379.gif";
+quote[++i]=quote[i-1]+"<br /><br />3) Portuguese demoscene";
+lefti[i] = righti[i] = "14831.gif";
+quote[++i]=quote[i-1]+"<br /><br />4) How i enabled and subverted it<br />(if we have time)";
+lefti[i] = righti[i] = "29739.jpg";
+
+quote[++i]="1) What is a demo?!";
+lefti[i] = righti[i] = "379.gif";
+quote[++i]=quote[i-1]+"<br /><br />the word demo<br />short for demonstration";
+quote[++i]=quote[i-1]+"<br /><br />a demo demonstrates what users<br />can do with a machine";
+quote[++i]=quote[i-1]+"<br /><br />what a machine can process";
+
+quote[++i]="all machines are demo platforms<br /><br />gameboy";
+lefti[i] = "26516.gif";
+quote[++i]=quote[i-1]+", spectrum";
+righti[i] = "52355.png";
+quote[++i]=quote[i-1]+"<br />dreamcast";
+lefti[i] = "50920.png";
+quote[++i]=quote[i-1]+", xbox";
+righti[i] = "13290.jpg";
+quote[++i]=quote[i-1]+"<br />TI calculator";
+lefti[i] = "4330.jpg";
+quote[++i]=quote[i-1]+", browser";
+righti[i] = "jspongy";
+
+quote[++i]="1) What is a demo?!<br /><br />demos shows off machine";
+lefti[i] = righti[i] = "379.gif";
+
+quote[++i]="realtime rendering";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br />25 or 50 fps";
+quote[++i]=quote[i-1]+"<br /><br />load resources";
+quote[++i]=quote[i-1]+"<br />calculate animations";
+quote[++i]=quote[i-1]+"<br />render to screen";
+
+quote[++i]="can be interactive";
+lefti[i] = righti[i] = "50489.jpg";
+quote[++i]=quote[i-1]+"<br />(like videogames)";
+lefti[i] = righti[i] = "12036.jpg";
+quote[++i]=quote[i-1]+"<br /><br />but most are not";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />screensaver is a demo";
+lefti[i] = righti[i] = "2878.gif";
+quote[++i]=quote[i-1]+"<br /><br />tech demo is a demo";
+lefti[i] = righti[i] = "nvidia.jpg";
+quote[++i]=quote[i-1]+"<br /><br />benchmark is a demo";
+lefti[i] = righti[i] = "11747.jpg";
+
+quote[++i]="demos are non profit";
+lefti[i] = righti[i] = "dot.jpg";
+
+quote[++i]="demos challenge realtime";
+quote[++i]=quote[i-1]+"<br />rendering techniques";
+lefti[i] = righti[i] = "50526.jpg";
+quote[++i]=quote[i-1]+"<br />performance optimizations";
+lefti[i] = righti[i] = "53950.jpg";
+quote[++i]=quote[i-1]+"<br />redo ideas";
+lefti[i] = righti[i] = "5606.jpg";
+quote[++i]=quote[i-1]+"<br />redo ideas in small .exe";
+lefti[i] = righti[i] = "33102.png";
+
+quote[++i]="demos show off creativity";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br />make something interesting realtime";
+quote[++i]=quote[i-1]+"<br />in whatever platform you use";
+
+quote[++i]="Taxesss / Nothing<br /><br />processing/java, pixelshaders 2.0";
+lefti[i] = righti[i] = "53952.jpg";
+
+quote[++i]="demos are usually group effort";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br />(demogroup)";
+quote[++i]=quote[i-1]+"<br /><br />doesn't need to be local";
+quote[++i]=quote[i-1]+"<br />but it helps";
+
+quote[++i]="Taxesss / Nothing<br /><br />Lost Gorbachevs :: soundtrack<br />V* :: Code, Add. Direction<br />ps :: Direction, Add. Code, Artwork";
+lefti[i] = righti[i] = "53952.jpg";
+
+quote[++i]="demos compete in competitions";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br />usually around organized events";
+quote[++i]=quote[i-1]+"<br />(demoparties)";
+quote[++i]=quote[i-1]+"<br /><br />but can also occur online<br />(like the TextMode DemoCompo)";
+lefti[i] = "6989.jpg";
+righti[i] = "15461.gif";
+
+quote[++i]="Taxesss / Nothing<br /><br />7th place at MAIN #4<br />in Arles / France (4 Nov)";
+lefti[i] = righti[i] = "53952.jpg";
+
+quote[++i]="<strike>demos compete in competitions</strike>";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />can also be released outside compos";
+lefti[i] = righti[i] = "53082.jpg";
+quote[++i]=quote[i-1]+"<br /><br />but 95% are released at demoparties";
+lefti[i] = righti[i] = "dot.jpg";
+
+quote[++i]="What is a demoparty?!";
+quote[++i]=quote[i-1]+"<br />lanparties";
+quote[++i]=quote[i-1]+"<br />with demoscene competitions";
+quote[++i]=quote[i-1]+"<br />demo, intro 64k, intro 4k";
+quote[++i]=quote[i-1]+"<br />graphics, music, ascii/ansi";
+quote[++i]=quote[i-1]+"<br />wild/animation, photo";
+quote[++i]=quote[i-1]+"<br />executable music";
+quote[++i]=quote[i-1]+"<br />procedural 4k graphics";
+
+quote[++i]="demoscene has no rules<br />(great scotch)";
+
+quote[++i]="<strike>demoscene has no rules</strike><br />demoscene has set of non-written rules";
+quote[++i]=quote[i-1]+"<br /><br />you may not rip, repeat or borrow";
+quote[++i]=quote[i-1]+"<br />(unless you use it well or do it better)";
+quote[++i]=quote[i-1]+"<br /><br />else face social wrath";
+quote[++i]=quote[i-1]+"<br />of a self regulating<br />anarcho-capitalist<br />social network hierarchy";
+
+quote[++i]="demoscene has no purpose";
+
+quote[++i]="<strike>demoscene has no purpose</strike><br />self gratification";
+quote[++i]=quote[i-1]+"<br /><br />explore capacity of technology";
+quote[++i]=quote[i-1]+"<br /><br />have fun with nerd friends";
+quote[++i]=quote[i-1]+"<br /><br />gather softskills";
+quote[++i]=quote[i-1]+"<br />(programming, sound production";
+quote[++i]=quote[i-1]+",<br />art/design, team/project managment)";
+
+quote[++i]="<strike>demoscene has no purpose</strike><br /><br />ego brushing";
+quote[++i]=quote[i-1]+"<br /><br />tech bullies";
+quote[++i]=quote[i-1]+"<br /><br />attention whore";
+quote[++i]=quote[i-1]+"<br /><br />social drinking";
+
+quote[++i]="2) Where demoscene came from?!";
+quote[++i]=quote[i-1]+"<br /><br />dates back to the 80s";
+
+quote[++i]="personal computers hit the market";
+quote[++i]=quote[i-1]+"<br /><br />Atari VCS";
+lefti[i] = "13900.png";
+righti[i] = "30236.gif";
+quote[++i]=quote[i-1]+"<br /><br />TRS-80";
+lefti[i] = "51828.gif";
+righti[i] = "52334.gif";
+quote[++i]=quote[i-1]+"<br /><br />Commodore 64";
+lefti[i] = "1417.gif";
+righti[i] = "1459.gif";
+quote[++i]=quote[i-1]+"<br /><br />ZX Spectrum";
+lefti[i] = "973.gif";
+righti[i] = "9698.gif";
+quote[++i]=quote[i-1]+"<br /><br />MSX";
+lefti[i] = "7662.jpg";
+righti[i] = "54051.jpg";
+
+quote[++i]="videogame industry started";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />teenagers swapped games";
+quote[++i]=quote[i-1]+"<br /><br />organized local groups";
+quote[++i]=quote[i-2]+"<br /><br /><strike>organized local groups</strike><br />juvenile crime syndicates";
+
+quote[++i]="copy protection";
+quote[++i]=quote[i-1]+'<br /><br />crack intros<br />';
+lefti[i] = "swf0";
+quote[++i]=quote[i-1]+"<br />group tags on digital property";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br />similar to graffiti";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br />marking the territory";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />groups tried to expand";
+lefti[i] = "donothing";
+
+quote[++i]="mail swapping / stamps back";
+righti[i] = "swf1";
+quote[++i]=quote[i-1]+"<br /><br />Bulletin Board System";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />import / export";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />copy parties";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />cracking got more serious";
+righti[i] = "donothing";
+
+quote[++i]="required skilled coders";
+lefti[i] = "swf2";
+quote[++i]=quote[i-1]+"<br /><br />cracktros<br />required graphics and music";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />cool groups != rip";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br />get original music";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br />get original logos / fonts";
+lefti[i] = "donothing";
+
+quote[++i]="crack groups demo division";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />artwork traded for access";
+lefti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />copy parties => demo parties";
+lefti[i] = "donothing";
+
+quote[++i]="competitions at demoparties";
+righti[i] = "swf3";
+quote[++i]=quote[i-1]+"<br /><br />venlo meetings holland late 80s";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />big increase early 90s";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />germany, france<br />finland, sweden, norway";
+righti[i] = "donothing";
+
+quote[++i]="Demoparty World Datavis<br />(vic's GeoLocator<br />with demoparty.net dump)";
+righti[i] = "donothing";
+
+quote[++i]="c64 popular in most countries";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />spectrum, msx, atari";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />atari vs amiga";
+righti[i] = "donothing";
+quote[++i]=quote[i-1]+"<br /><br />amiga vs pc";
+righti[i] = "donothing";
+
+quote[++i]="police raids late 80s";
+lefti[i] = righti[i] = "dontcopy.jpg";
+quote[++i]=quote[i-1]+"<br /><br />copy parties => demo parties<br />(coding parties)";
+quote[++i]=quote[i-1]+"<br /><br />computer console => personal computer";
+
+quote[++i]="90s - pc became more popular";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />vga 256 colours => vesa 2.0 32bpp";
+quote[++i]=quote[i-1]+"<br /><br />pc beeper / adlib => gus vs soundblaster";
+quote[++i]=quote[i-1]+"<br /><br />dos => windows";
+quote[++i]=quote[i-1]+"<br /><br />bbs => internet";
+
+quote[++i]="2000 3d accelerated graphics cards";
+quote[++i]=quote[i-1]+"<br /><br />opengl vs directx";
+quote[++i]=quote[i-1]+"<br /><br />nvidia vs ati";
+quote[++i]=quote[i-1]+"<br /><br />pixelshader, vertexshader";
+
+quote[++i]="lots of groups / platforms";
+quote[++i]=quote[i-1]+"<br /><br />but we only have 45 minutes";
+
+quote[++i]="3) Portuguese demoscene";
+quote[++i]=quote[i-1]+"<br /><br />1990 - overscan demos / Paulo Simões<br />(Atari ST)";
+lefti[i] = righti[i] = "14831.gif";
+
+quote[++i]="1994 - Radioactive Design demogroup";
+lefti[i] = "15836.gif";
+righti[i] = "15171.png";
+quote[++i]=quote[i-1]+"<br /><br />1996 - Infinity Diskmag";
+lefti[i] = "14704.jpg";
+righti[i] = "14705.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1996 - Darkness Unknown Force (DUF)<br />demogroup";
+lefti[i] = "15163.png";
+righti[i] = "15165.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1996 - Atlantic Scene '96 Demoparty";
+lefti[i] = righti[i] = "24652.png";
+
+quote[++i]="1997 - Simple'97 demoparty<br />PAUG meetings";
+lefti[i] = "53967.png";
+righti[i] = "53967.png";
+quote[++i]=quote[i-1]+"<br /><br />1997 - Garbage demogroup";
+lefti[i] = "53968.jpg";
+righti[i] = "8920.png";
+quote[++i]=quote[i-1]+"<br /><br />1997 - trip to Assembly'97 (.fi)";
+lefti[i] = "195.jpg";
+righti[i] = "86.png";
+quote[++i]=quote[i-1]+"<br /><br />1997 - trip to The Party 7 (.dk)<br />1997 - DUF => Dawn3";
+lefti[i] = "2978.png";
+righti[i] = "2979.png";
+
+quote[++i]="1998 - Mindwalkr soundtrack for Suburban";
+lefti[i] = "466.jpg";
+righti[i] = "465.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1998 - Label demogroup";
+lefti[i] = "12769.jpg";
+righti[i] = "5360.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1998 - Demojournal Newsletter";
+lefti[i] = righti[i] = "dot.jpg";
+
+quote[++i]="1999 - Reboot'99 online democompo";
+lefti[i] = "5363.gif";
+righti[i] = "12599.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1999 - Nothing demogroup";
+lefti[i] = "6525.jpg";
+righti[i] = "12599.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1999 - Dawn3 => The Digital Artists demogroup";
+lefti[i] = "2976.png";
+righti[i] = "2974.jpg";
+quote[++i]=quote[i-1]+"<br /><br />1999 - Demoparty interrail (.fr .hu)";
+lefti[i] = "5361.gif";
+righti[i] = "363.jpg";
+
+quote[++i]="2000 - KEP Demoscene Meeting";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2000 - Reboot'00 online democompo";
+lefti[i] = "4042.gif";
+righti[i] = "6522.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2000 - More productions sent abroad";
+lefti[i] = "2973.jpg";
+righti[i] = "739.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2000 - Demoparty interrail (.fi .no .de .ch)";
+lefti[i] = righti[i] = "dot.jpg";
+
+quote[++i]="2001 - 1st edition inérciaDemoparty<br />2001 - Airbag demogroup";
+lefti[i] = "3566.jpg";
+righti[i] = "4062.gif";
+quote[++i]=quote[i-1]+"<br /><br />2001 - PSM and Boozetuga meetings";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2001 - started EnoughRecords netlabel<br />2001 - joined scene.org staff";
+quote[++i]=quote[i-1]+"<br /><br />2001 - Demoparty interrail (.fi .dk .de)";
+
+quote[++i]="Meanwhile...<br /><br />Somewhere deep in the Caribean";
+lefti[i] = "mi_01.png";
+righti[i] = "mi_02.png";
+quote[++i]=quote[i-1]+"<br /><br />Our hero Guybrush Threepwood<br />continues his quest<br />to become a pirate";
+lefti[i] = "mi_01.png";
+righti[i] = "mi_02.png";
+quote[++i]=quote[i-1]+"<br /><br />and defeat the evil LeChuck";
+lefti[i] = "mi_01.png";
+righti[i] = "mi_02.png";
+quote[++i]="using nothing but voodoo";
+lefti[i] = "mi_03.png";
+righti[i] = "mi_02.png";
+quote[++i]=quote[i-1]+"<br /><br />and a blunt cutlass";
+lefti[i] = "mi_03.png";
+righti[i] = "mi_04.png";
+quote[++i]=quote[i-1]+"<br /><br />he persists onwards";
+lefti[i] = "mi_03.png";
+righti[i] = "mi_04.png";
+quote[++i]=quote[i-1]+"<br /><br />while his crew chills";
+lefti[i] = "mi_05.png";
+righti[i] = "mi_04.png";
+quote[++i]=quote[i-1]+"<br /><br />in the depths of hell";
+lefti[i] = "mi_05.png";
+righti[i] = "mi_06.png";
+
+quote[++i]="2002 - 2nd edition inérciaDemoparty<br />2002 - True Dimensions";
+lefti[i] = "7561.jpg";
+righti[i] = "12717.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2002 - UVA demogroup";
+lefti[i] = "4813.gif";
+righti[i] = "10432.png";
+quote[++i]=quote[i-1]+"<br /><br />2002 - minimalartifact";
+lefti[i] = "7478.jpg";
+righti[i] = "7562.jpg";
+
+quote[++i]="2002 - bustrip to Mekka Symposium'02 (.de)";
+lefti[i] = "5669.jpg";
+righti[i] = "6111.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2002 - cartrip to BCNParty (.es)";
+lefti[i] = "13088.png";
+righti[i] = "8184.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2002 - pouet.net admin";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2002 - Demoparty interrail (.hu .de .ch)";
+
+quote[++i]="2003 - 3rd edition inérciaDemoparty<br />2003 - Volumetric Illusions demogroup";
+lefti[i] = "10428.jpg";
+righti[i] = "10427.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2003 - Breakpoint'03 (.de)";
+lefti[i] = "14430.jpg";
+righti[i] = "10429.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2003 - cartrip to BCNParty (.es)";
+lefti[i] = "11034.jpg";
+righti[i] = "11035.jpg";
+
+quote[++i]="2004 - 4th edition inérciaDemoparty";
+lefti[i] = "12973.jpg";
+righti[i] = "12971.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2004 - Breakpoint'04 (.de)<br />2004 - cartrip to BCNParty (.es)<br/ >2004 - ps demoparty interrail (.fi .de .ch)<br />KEP meeting";
+lefti[i] = "14987.jpg";
+righti[i] = "14827.png";
+
+quote[++i]="2005 - 5th edition inérciaDemoparty";
+lefti[i] = "18838.jpg";
+righti[i] = "18836.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2005 - alien)(dream, GlenZ Demogroups";
+lefti[i] = "18841.png";
+righti[i] = "18833.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2005 - Breakpoint'05 (.de)";
+lefti[i] = "16400.png";
+righti[i] = "16335.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2005 - cartrip to BCNParty [.es]";
+lefti[i] = "20192.gif";
+righti[i] = "20163.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2005 - Epic Voyage Summer Demoparty Tour (.nl .fi .dk .de .ch)";
+lefti[i] = "18464.gif";
+righti[i] = "18802.jpg";
+
+quote[++i]="2006 - 6th edition inérciaDemoparty";
+lefti[i] = "26623.jpg";
+righti[i] = "26619.gif";
+quote[++i]=quote[i-1]+"<br /><br />2006 - IfParty'06 (.es)";
+lefti[i] = "25669.jpg";
+righti[i] = "24386.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2006 - Breakpoint'06 (.de)<br />2006 - Euskal namevoting incident (.es)";
+lefti[i] = "25658.jpg";
+righti[i] = "25659.jpg";
+
+quote[++i]="2007 - Breeze Demoparty<br />2007 - Napalm Core Demogroup<br />828 won Icons'07";
+lefti[i] = "29760.png";
+righti[i] = "29739.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2007 - cartrip to Euskal (.es)<br />2007 - cartrip to BCNParty (.es)";
+lefti[i] = "31358.png";
+righti[i] = "31352.gif";
+quote[++i]=quote[i-1]+"<br /><br />2007 - Numérica'07 (.fr)<br />2007 - Breakpoint'07 (.de)<br />Some remote entries";
+lefti[i] = "32205.jpg";
+righti[i] = "33130.png";
+
+quote[++i]="2008 - 7th edition inérciaDemoparty";
+lefti[i] = "51826.jpg";
+righti[i] = "52432.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2008 - VS* Demogroup";
+lefti[i] = "51822.jpg";
+righti[i] = "51988.png";
+quote[++i]=quote[i-1]+"<br /><br />2008 - Breakpoint'08 (.de)<br />2008 - Evoke'08 (.de)";
+lefti[i] = "50163.jpg";
+righti[i] = "51218.gif";
+
+quote[++i]="2009 - Evoke shadowparty";
+lefti[i] = righti[i] = "dot.jpg";
+quote[++i]=quote[i-1]+"<br /><br />2009 - Breakpoint'09 (.de)<br />2009 - MAIN Party #4 (.fr)";
+lefti[i] = "53040.jpg";
+righti[i] = "53952.jpg";
+
+quote[++i]='Portuguese demoscene<br /><br /><canvas id="bar10" height="400" width="800"></canvas>';
+lefti[i] = righti[i] = "graph";
+
+quote[++i]='Thanks for your time!';
+lefti[i] = righti[i] = "dot.jpg";
+
+quote[++i] = 'Q&A';
+quote[++i] = quote[i-1] + '<br /><br />Hacking the Demoscene?<br /><br />When is the next <a href="http://inercia.scene.org">inérciaDemoparty</a>?<br /><br /><a href="http://xdatelier.org">xDA</a><br />(Coimbra hacklab)<br /><br /><a href="http://enoughrecords.scene.org">Enough is Enough</a>!<br />(the netlabel scene)';
+quote[++i] = quote[i-2] + '<br /><br />Fuck <a href="http://pouet.net">pouet</a><br /><br /><a href="http://tpolm.org">TPOLM</a> vs <a href="http://tpolm.org/~ps/ma.html">minimalartifact</a><br /><br />Killing <a href="http://farbrausch.de">Farbrausch</a> 3 times<br /><br /><a href="http://kosmoplovci.net">KOOI</a> + <a href="http://cpu.untergrund.net/">CPU</a><br />(Russian Balcan connection)';
+
+quote[++i] = 'Tools & Resources abused in this presentation:';
+quote[++i] = quote[i-1] + '<br /><br />Screenshots from pouet<br /><br />Javascript demo from p01<br /><br />RGraph from RGraph<br /><br />SWFObject from SWFObject<br /><br />Cracktro remakes from Doc Snyder<br /><br />Monkey Island screenshots from that MI port differences site which i dont remember';
+
+
+}
+
+function menuSelect(e) 
+{
+	// select 1
+	if(e.type == 'keydown' && e.which == 37)
+	{
+		index--;
+		if (index < 0 ) index=quote.length-1;	
+		
+	}	
+	// select 2
+	else if(e.type == 'keydown' && e.which == 39)
+	{
+		index++;
+		if (index > quote.length-1) index=0;
+	}
+	
+	//if (e.which == 68) 
+	
+	document.getElementById("listme").innerHTML = quote[index];
+	
+	switch (lefti[index]) {
+	 case 'feup':
+	 	document.getElementById("leftlink").href = "http://www.fe.up.pt";
+	 	document.getElementById("left").src = "feup.gif";
+	 	break;
+	 case 'swf0':
+	 	document.getElementById("otherr").innerHTML = "";
+	 	document.getElementById("otherl").innerHTML = "<div id=\"swfcontent\"></div>";
+	 	addFlashToContent('0');
+	 	break;
+	 case 'swf2':
+	 	document.getElementById("otherr").innerHTML = "";
+	 	document.getElementById("otherl").innerHTML = "<div id=\"swfcontent\"></div>";
+	 	addFlashToContent(2);
+	 	break;
+	 case 'donothing':
+	 	break;
+	 case 'graph':
+	 	document.getElementById("otherl").innerHTML = "";
+		document.getElementById("left").src = "dot.jpg";
+			bar10 = new RGraph.Bar('bar10', [[0,0,1,0],[0,0,0,0],[0,1,1,0],[0,1,1,0],[1,4,8,0],[2,3,5,2],[0,3,8,1],[1,3,8,2],[2,4,6,6],[2,2,3,3],[1,8,15,6],[2,8,14,2],[2,8,19,5],[1,12,24,8],[1,6,12,5],[1,7,12,7],[1,6,8,4],[0,2,4,2]]);
+            //bar10.Set('chart.title', 'Portuguese Demoscene');
+            bar10.Set('chart.key', ['Demoparties/Compos', '.Active Demogroups', 'Releases', 'Foreign Parties Attended']);
+            bar10.Set('chart.key.position', 'gutter');
+            bar10.Set('chart.key.shadow', true);
+            bar10.Set('chart.grouping', 'stacked');
+            bar10.Set('chart.gutter', 30);
+            bar10.Set('chart.variant', '3d');
+            bar10.Set('chart.labels', ['1990', '...', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009']);
+            bar10.Set('chart.colors', ['red', 'green', 'blue', 'yellow']);
+            bar10.Set('chart.background.barcolor1', '#eee');
+            bar10.Set('chart.background.barcolor2', '#eee');
+            bar10.Set('chart.strokecolor', 'rgba(0,0,0,0)');
+            bar10.Draw();
+	 	break;
+	 default: 
+	 	document.getElementById("otherl").innerHTML = "";
+		document.getElementById("left").src = lefti[index];
+		document.getElementById("leftlink").href = "http://www.pouet.net/prod.php?which="+parseInt(lefti[index]);
+		break;
+	}
+	
+	switch (righti[index]) {
+	 case 'jspongy': 
+	 	document.getElementById("otherr").innerHTML = "<canvas id=R width=64 height=64 style=width:3in;height:3in;background:#fff>";
+	 	N=[K=R.getContext('2d')];
+	 	for(t=B=127,I=K.getImageData(0,0,q=64,q);t--;$=Math.cos) N[t]=t/43&1;
+	 	jsID = setInterval("t++;for(i=y=-1;y<1;y+=A)for(x=-1;x<1;x+=A=1/32,I.data[i+=4]=h+h)for(m=C=$(a=t/86),S=$(a+8),c=$(b=t/B),s=$(b+8),u=x*C+S,v=y*c-u*s,u=u*c+y*s,w=C-x*S,X=q+9*$(a+b),Y=q+9*$(b-a),Z=t,h=B;--h && m < q;X+=u,Y+=v,Z+=w)for(m=1;N[X*m&B]+N[Y*m&B]+N[Z*m&B]<2&&m< q;m*=3);K.putImageData(I,0,0)",9);
+	 	document.getElementById("right").src = "dot.jpg";
+	 	document.getElementById("rightlink").href = "http://www.p01.org/releases/";
+	 	break;
+	 case 'ttw':
+	 	document.getElementById("rightlink").href = "http://www.takethewind.com";
+	 	document.getElementById("right").src = "ttw.png";
+	 	break;
+	 case 'swf1':
+	 	document.getElementById("otherl").innerHTML = "";
+	 	document.getElementById("otherr").innerHTML = "<div id=\"swfcontent\"></div>";
+	 	addFlashToContent(1);
+	 	break;
+	 case 'swf3':
+	 	document.getElementById("otherl").innerHTML = "";
+	 	document.getElementById("otherr").innerHTML = "<div id=\"swfcontent\"></div>";
+	 	addFlashToContent(3);
+	 	break;
+	 case 'donothing':
+		break;
+	case 'graph':
+	 	document.getElementById("otherr").innerHTML = "";
+		document.getElementById("right").src = "dot.jpg";
+	 	break;
+	 default:
+	 	clearInterval(jsID);
+	 	document.getElementById("otherr").innerHTML = "";
+	 	document.getElementById("right").src = righti[index];
+		document.getElementById("rightlink").href = "http://www.pouet.net/prod.php?which="+parseInt(righti[index]);
+		break;
+	}
+
+	
+}
+
+document.onkeydown = menuSelect;
+
+
+</script>
+</header>
+<body onload="loadup()" style="padding:0px; margin:0px; text-align:center;">
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<br /><br />
+<!--<table style="text-align:center"><tr><td style="width:400px"><img src="dot.jpg" id="left"/></td><td id="listme" style="font-family: Verdana; font-size: 34; valign: center; width: 100%">Hello World</td><td style="width:400px"><img src="ttw.png" id="left"/></td></tr></table>
+-->
+<div style="position:absolute; left:1;"><a id="leftlink" href=""><span id="otherl"></span><img src="dot.jpg" id="left" style="max-width: 260px; border: 0"/></a></div>
+<div style="position:absolute; right:1;"><a id="rightlink" href=""><span id="otherr"></span><img src="dot.jpg" id="right" style="max-width: 260px; border: 0"/></a></div>
+<div id="listme" style="font-family: Verdana; font-size: 22;">Hello Sapo Codebits 2009 World!<br /><br />use the arrow keys to present magic</div>
+</body>
+</html>
